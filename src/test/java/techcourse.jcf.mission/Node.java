@@ -1,21 +1,11 @@
 package techcourse.jcf.mission;
 
 public class Node {
+    public String value;
+    public Node next;
 
-
-    private String info;
-    private Node next;
-
-    public Node(String info) {
-        this.info = info;
-    }
-
-    public Node(String info, Node next) {
-        this.info = info;
-        this.next = next;
-    }
-
-    public void connect(Node next) {
-        this.next = next;
+    public Node(final String value) {
+        this.value = value;
+        next = null;
     }
 }

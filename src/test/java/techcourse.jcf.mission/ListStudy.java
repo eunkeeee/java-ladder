@@ -10,25 +10,20 @@ public class ListStudy {
         SimpleList values = new SimpleLinkedList();
         values.add("first");
         values.add("second");
-
-        // assertThat(values.indexOf("second")).isEqualTo(1);
-        // assertThatThrownBy(() -> values.indexOf("none")).isInstanceOf(NoSuchElementException.class);
+        values.add(1, "new");
 
         assertThat(values.add("third")).isTrue();
 
-        // assertThat(values.size()).isEqualTo(3);
-        // assertThat(values.get(0)).isEqualTo("first");
-        // assertThat(values.contains("first")).isTrue();
+        assertThat(values.get(0)).isEqualTo("first");
+        assertThat(values.contains("first")).isTrue();
 
-        // assertThat(values.remove(0)).isEqualTo("first");
-        // assertThat(values.remove("second")).isTrue();
-        // assertThat(values.remove("none")).isFalse();
+        assertThat(values.remove(0)).isEqualTo("first");
+        assertThat(values.remove("second")).isTrue();
+        assertThat(values.remove("none")).isFalse();
 
-        // assertThat(values.size()).isEqualTo(1);
+        SimpleList emptyValues = new SimpleArrayList();
+        assertThat(emptyValues.isEmpty()).isTrue();
 
-        // SimpleList emptyValues = new SimpleArrayList();
-        // assertThat(emptyValues.isEmpty()).isTrue();
-
-        // System.out.println(values);
+        System.out.println(values);
     }
 }
